@@ -25,8 +25,13 @@ namespace Business.Concrete
 
         public IResult Add(Company company)
         {
-            _companyDal.Add(company);
-            return new SuccessResult(Messages.AddedCompany);
+            if (company.Name.Length >10)
+            {
+                _companyDal.Add(company);
+                return new SuccessResult(Messages.AddedCompany);
+            }
+            return new ErrorResult(Messages.AddError);
+           
         }
 
         //public List<Company> GetList()
@@ -36,7 +41,7 @@ namespace Business.Concrete
 
         IDataResult<List<Company>> ICompanyService.GetList()
         {
-            return new SuccessDataResult<List<Company>>(_companyDal.GetAll(), "Sorgulama İşlemi Başarılıdır.");
+            return new SuccessDataResult<List<Company>>(_companyDal.GetAll(), Messages.GetList);
         }
     }
 }

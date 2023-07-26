@@ -35,7 +35,7 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<CurrencyAccountManager>().As<ICurrencyAccountService>();
             builder.RegisterType<EfCurrencyAccountDal>().As<ICurrencyAccountDal>();
 
-            builder.RegisterType<CompanyManager>().As<ICurrencyService>();
+            builder.RegisterType<CurrencyManager>().As<ICurrencyService>();
             builder.RegisterType<EfCurrencyDal>().As<ICurrencyDal>();
 
             builder.RegisterType<MailParameterManager>().As<IMailParameterService>();

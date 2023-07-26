@@ -9,5 +9,7 @@ namespace Business.Constans
     public class Messages
     {
         public static string AddedCompany = "Şirket Kaydı Başarı İle Oluşturuldu.";
+        public static string GetList = "Listeleme İşlemi Başarılı";
+        public static string AddError = "Ekleme işlemi hatalıdır.";
     }
 }
